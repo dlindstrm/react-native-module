@@ -26,7 +26,6 @@ NSString *const UARCTAirshipKitRecommendedVersion = @"8.4.3";
     [[UAirship shared].actionRegistry updatePredicate:^BOOL(UAActionArguments *args) {
         return NO;
     } forEntryWithName:kUAOpenExternalURLActionDefaultRegistryName];
-    NSLog(@"%@ENTRY_UA",[UAirship shared].actionRegistry.registeredEntries);
 
     // Register custom deep link action
     UARCTDeepLinkAction *dle = [[UARCTDeepLinkAction alloc] init];
