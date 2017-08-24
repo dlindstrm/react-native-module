@@ -22,6 +22,11 @@ NSString *const UARCTAirshipKitRecommendedVersion = @"8.4.3";
     [UAirship push].pushNotificationDelegate = [UARCTEventEmitter shared];
     [UAirship push].registrationDelegate = [UARCTEventEmitter shared];
     [UAirship inbox].delegate = [UARCTMessageCenter shared];
+    
+    [[UAirship shared].actionRegistry updatePredicate:^BOOL(UAActionArguments *args) {
+        return NO;
+    } forEntryWithName:kUAOpenExternalURLActionDefaultRegistryName];
+    NSLog(@"%@ENTRY_UA",[UAirship shared].actionRegistry.registeredEntries);
 
     // Register custom deep link action
     UARCTDeepLinkAction *dle = [[UARCTDeepLinkAction alloc] init];
