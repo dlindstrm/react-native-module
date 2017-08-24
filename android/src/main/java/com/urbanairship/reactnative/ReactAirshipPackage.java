@@ -22,7 +22,6 @@ public class ReactAirshipPackage implements ReactPackage {
         return Collections.<NativeModule>singletonList(new UrbanAirshipReactModule(reactContext));
     }
 
-    @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }

@@ -12,6 +12,7 @@ import com.urbanairship.actions.ActionArguments;
 import com.urbanairship.actions.ActionRegistry;
 import com.urbanairship.actions.ActionResult;
 import com.urbanairship.actions.DeepLinkAction;
+import com.urbanairship.actions.OpenExternalUrlAction;
 import com.urbanairship.actions.OpenRichPushInboxAction;
 import com.urbanairship.actions.OverlayRichPushMessageAction;
 import com.urbanairship.reactnative.events.DeepLinkEvent;
@@ -29,6 +30,8 @@ public class ReactAutopilot extends Autopilot {
     public void onAirshipReady(UAirship airship) {
         super.onAirshipReady(airship);
 
+        airship.getActionRegistry()
+        .unregisterAction(OpenExternalUrlAction.DEFAULT_REGISTRY_NAME);
 
         // Modify the deep link action to emit events
         airship.getActionRegistry().getEntry(DeepLinkAction.DEFAULT_REGISTRY_NAME).setDefaultAction(new DeepLinkAction() {
