@@ -22,6 +22,7 @@ public class ReactAirshipPackage implements ReactPackage {
         return Collections.<NativeModule>singletonList(new UrbanAirshipReactModule(reactContext));
     }
 
+    // deprecated in RN 0.47
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }
