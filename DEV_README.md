@@ -1,11 +1,21 @@
 # Urban Airship React Native development
 
-1) In the root module directory, link the development module:
+1) Install the react command line tools and watchman, if necessary:
+
+```
+npm install -g react-native-cli
+```
+
+```
+brew install watchman
+```
+
+2) In the root module directory, link the development module:
 ```
 npm link
 ```
 
-2) In `sample/AirshipSample` prepare the sample:
+3) In `sample/AirshipSample` prepare the sample:
 ```
 npm link urbanairship-react-native
 npm install
